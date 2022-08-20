@@ -1,0 +1,27 @@
+#loading {
+  z-index: 2;
+
+  position: fixed;
+  display: block;
+  top: 50%;
+  right: 50%;
+  margin-top: -100px; /* half of the elements height */
+  margin-right: -100px;
+  width: 200px;
+  height: 200px;
+  border: 10px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: lightgray;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+}
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
