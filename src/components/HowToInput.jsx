@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useState } from "react";
 import { getHowToText } from "./../services/how.js";
+import "./HowToInput.scss";
 
 const HowToInput = ({ setHowToText, changeLoading, isLoading }) => {
   const [inputTerm, setInputTerm] = useState("");

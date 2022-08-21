@@ -1,6 +1,17 @@
 .homepage {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   flex-grow: 1;
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+  .close-btn {
+    font-size: 3em;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+  }
 }

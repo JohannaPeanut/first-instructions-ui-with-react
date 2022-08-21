@@ -17,7 +17,7 @@ const Footer = () => {
 
       <button className="imprint-button fire-cursor">
         <a
-          href="https://github.com/plasticfruits/gpt2-fine-tunning-pytorch"
+          href="https://github.com/JohannaPeanut/first-instructions-ui-with-react"
           target="_blank"
           className=" btn no-outline"
           rel="noreferrer"

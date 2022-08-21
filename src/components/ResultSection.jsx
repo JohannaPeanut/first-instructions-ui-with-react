@@ -1,10 +1,11 @@
 import React from "react";
+import "./ResultSection.scss";
 
 const ResultSection = ({ howToText }) => {
   return (
     <section className="second-section">
-      <div className="tutorial-text">
-        <p className="tutorial-paragraph">{howToText}</p>
+      <div className="box-text">
+        <p>{howToText}</p>
       </div>
     </section>
   );

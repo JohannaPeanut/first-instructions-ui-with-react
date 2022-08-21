@@ -6,6 +6,7 @@ import Spinner from "../components/Spinner";
 import Footer from "../components/Footer";
 import "./Homepage.scss";
 import About from "../components/About";
+import { IoMdCloseCircle } from "react-icons/io";
 
 const Homepage = () => {
   const [generatedText, setGeneratedText] = useState("");
@@ -18,40 +19,49 @@ const Homepage = () => {
 
   return (
     <div className="homepage">
-      <header>
-        {!isAbout ? (
-          <button
-            onClick={toggleAbout}
-            className="info-button fixed fire-cursor"
-          >
-            ABOUT
-          </button>
-        ) : (
-          <button onClick={toggleAbout}>X</button>
-        )}
-      </header>
       <aside>
         <div>
           <p>CULTURAL PRACTICES EXPLAINED BY AI.</p>
         </div>
       </aside>
-      {isAbout ? (
-        <About />
-      ) : (
-        <>
-          <HowToInput
-            changeLoading={setIsLoading}
-            isLoading={isLoading}
-            setHowToText={setGeneratedText}
-          />
-          {isLoading ? (
-            <Spinner />
+      <div className="main-container">
+        <header>
+          {!isAbout ? (
+            <button
+              onClick={toggleAbout}
+              className="info-button fixed fire-cursor"
+            >
+              ABOUT
+            </button>
           ) : (
-            generatedText && <ResultSection howToText={generatedText} />
+            <button className="close-btn" onClick={toggleAbout}>
+              {/* <IconContext.Provider
+                value={{ color: "blue", className: "global-class-name" }}
+              > */}
+              <IoMdCloseCircle style={{ fontSize: "2em" }} />
+              {/* </IconContext.Provider> */}
+            </button>
           )}
-        </>
-      )}
-      <Footer />
+        </header>
+
+        {isAbout ? (
+          <About />
+        ) : (
+          <>
+            <HowToInput
+              changeLoading={setIsLoading}
+              isLoading={isLoading}
+              setHowToText={setGeneratedText}
+            />
+            {isLoading ? (
+              <Spinner />
+            ) : (
+              generatedText && <ResultSection howToText={generatedText} />
+            )}
+          </>
+        )}
+        <Footer />
+      </div>
     </div>
   );
 };
